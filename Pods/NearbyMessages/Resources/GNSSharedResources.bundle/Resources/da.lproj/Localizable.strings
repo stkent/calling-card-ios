@@ -1,0 +1,54 @@
+/* Header above a list of device sensors. Note the capitalization. (40 chars) */
+"GNSSharedNearbySensorsListTitle" = "SENSORER TÆT PÅ";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonAllow" = "Tillad";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonDeny" = "Afvis";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonLearnMore" = "Få flere oplysninger";
+
+/* Title of an alert view or a screen. The %@ will be replaced with the name of the application. (80 chars) */
+"GNSSharedPermissionAlertTitle" = "Vil du give %@ tilladelse til at bruge Tæt på?";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletOne" = "Enhederne afspiller en kort kode eller musiktoner, der er tæt på ultralyd. Koden registreres ved hjælp af din mikrofon.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletThree" = "Nogle mennesker kan høre de højfrekvente lyde.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletTwo" = "Hvis der registreres en kode, sendes den til Googles servere for at oprette forbindelse mellem enhederne. Der sendes ingen lyd til Googles servere.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsAudioSubtitle" = "Send og modtag parringskoder";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsAudioTitle" = "Lyd";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletFour" = "Send parringskoder, sammenlign Wi-Fi-netværk, og overfør data ved hjælp af Googles servere.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletOne" = "Find enheder og steder i nærheden ved hjælp af Bluetooth og Wi-Fi.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletThree" = "Opret en midlertidig forbindelse for at overføre data mellem enheder.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletTwo" = "Send midlertidigt en parringskode med Bluetooth Low Energy.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsRadioSubtitle" = "Aktivér, så du kan finde andre og overføre data";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsRadioTitle" = "Bluetooth og Wi-Fi";
+
+/* Body text on a page describing the device sensors that the Nearby library needs. (250 chars) */
+"GNSSharedSensorPermissionDescription" = "Tæt på anvender placering, mikrofon, Wi-Fi og Bluetooth.";
+
+/* Title in a screen header. (25 chars) */
+"GNSSharedTurnOnNearby" = "Aktivér Tæt på";
+

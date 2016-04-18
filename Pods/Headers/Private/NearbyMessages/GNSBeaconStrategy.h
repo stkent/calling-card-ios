@@ -1,0 +1,1 @@
+../../../NearbyMessages/Headers/Public/GNSBeaconStrategy.h

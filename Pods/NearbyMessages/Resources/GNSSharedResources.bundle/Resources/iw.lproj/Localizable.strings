@@ -1,0 +1,54 @@
+/* Header above a list of device sensors. Note the capitalization. (40 chars) */
+"GNSSharedNearbySensorsListTitle" = "חיישנים קרובים";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonAllow" = "התר";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonDeny" = "דחה";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonLearnMore" = "למידע נוסף";
+
+/* Title of an alert view or a screen. The %@ will be replaced with the name of the application. (80 chars) */
+"GNSSharedPermissionAlertTitle" = "‏האם לאשר לאפליקציה %@ להשתמש ב-Nearby?";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletOne" = "מכשירים משמיעים קוד קצר, כמעט על קולי, או טונים מוזיקליים. המיקרופון משמש לזיהוי הקוד הזה.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletThree" = "יש אנשים שמסוגלים לשמוע קולות כמעט על-קוליים.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletTwo" = "‏אם נמצא קוד, הוא נשלח לשרתי Google כדי לחבר את המכשירים. לא נשלחת הקלטת אודיו אל השרתים של Google.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsAudioSubtitle" = "שליחה וקבלה של קודי התאמה";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsAudioTitle" = "אודיו";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletFour" = "‏העבר קודי התאמה, השווה רשתות Wi-Fi והעבר נתונים באמצעות שרתי Google.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletOne" = "‏אתר מכשירים ומקומות קרובים באמצעות Bluetooth ו-Wi-Fi.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletThree" = "צור חיבור זמני כדי להעביר נתונים בין מכשירים.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletTwo" = "‏שדר באופן זמני קוד התאמה באמצעות Bluetooth עם צריכת אנרגיה נמוכה.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsRadioSubtitle" = "הפעלה לשם גילוי והעברת נתונים";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsRadioTitle" = "‏Bluetooth ו-Wi-Fi";
+
+/* Body text on a page describing the device sensors that the Nearby library needs. (250 chars) */
+"GNSSharedSensorPermissionDescription" = "‏התכונה Nearby תשתמש במיקום, במיקרופון, ב-Wi-Fi וב-Bluetooth.";
+
+/* Title in a screen header. (25 chars) */
+"GNSSharedTurnOnNearby" = "‏הפעלת Nearby";
+

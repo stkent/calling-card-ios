@@ -1,0 +1,54 @@
+/* Header above a list of device sensors. Note the capitalization. (40 chars) */
+"GNSSharedNearbySensorsListTitle" = "SENSOR DI SEKITAR";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonAllow" = "Izinkan";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonDeny" = "Tolak";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonLearnMore" = "Pelajari lebih lanjut";
+
+/* Title of an alert view or a screen. The %@ will be replaced with the name of the application. (80 chars) */
+"GNSSharedPermissionAlertTitle" = "Izinkan %@ menggunakan fitur Di Sekitar?";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletOne" = "Perangkat akan memutar kode pendek yang mendekati frekuensi ultrasonik atau nada musik. Mikrofon akan digunakan untuk mendeteksi kode ini.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletThree" = "Mungkin ada beberapa orang yang dapat mendengar suara dalam rentang frekuensi mendekati ultrasonik.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletTwo" = "Kode yang terdeteksi akan dikirimkan ke server Google untuk menghubungkan perangkat. Audio tidak dikirimkan ke server Google.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsAudioSubtitle" = "Kirim dan terima kode penyandingan";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsAudioTitle" = "Audio";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletFour" = "Saling tukar kode penyandingan, bandingkan jaringan Wi-Fi, dan transfer data menggunakan server Google.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletOne" = "Temukan perangkat dan tempat-tempat terdekat menggunakan Bluetooth dan Wi-Fi.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletThree" = "Buat sambungan sementara untuk mentransfer data antar perangkat.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletTwo" = "Siarkan kode penyandingan untuk sementara melalui Bluetooth rendah energi.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsRadioSubtitle" = "Aktifkan agar dapat ditemukan dan untuk mentransfer data";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsRadioTitle" = "Bluetooth & Wi-Fi";
+
+/* Body text on a page describing the device sensors that the Nearby library needs. (250 chars) */
+"GNSSharedSensorPermissionDescription" = "Fitur Di Sekitar akan menggunakan lokasi, mikrofon, Wi-Fi, dan Bluetooth.";
+
+/* Title in a screen header. (25 chars) */
+"GNSSharedTurnOnNearby" = "Aktifkan Di Sekitar";
+

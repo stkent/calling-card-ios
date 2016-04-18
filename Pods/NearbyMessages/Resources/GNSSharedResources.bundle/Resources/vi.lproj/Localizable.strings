@@ -1,0 +1,54 @@
+/* Header above a list of device sensors. Note the capitalization. (40 chars) */
+"GNSSharedNearbySensorsListTitle" = "CẢM BIẾN LÂN CẬN";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonAllow" = "Cho phép";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonDeny" = "Từ chối";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonLearnMore" = "Tìm hiểu thêm";
+
+/* Title of an alert view or a screen. The %@ will be replaced with the name of the application. (80 chars) */
+"GNSSharedPermissionAlertTitle" = "Cho phép %@ sử dụng Lân cận?";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletOne" = "Thiết bị phát một mã ngắn gần mức siêu âm hoặc tiếng nhạc. Micrô của bạn được sử dụng để phát hiện mã này.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletThree" = "Một số người có thể nghe được âm thanh trong phạm vi gần mức siêu âm.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletTwo" = "Nếu tìm thấy mã, mã được gửi đến máy chủ của Google để kết nối các thiết bị. Không có âm thanh nào được gửi tới máy chủ của Google.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsAudioSubtitle" = "Gửi và nhận mã ghép nối";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsAudioTitle" = "Âm thanh";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletFour" = "Trao đổi mã ghép nối, so sánh các mạng Wi-Fi và chuyển dữ liệu bằng máy chủ của Google.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletOne" = "Khám phá thiết bị và địa điểm lân cận bằng cách sử dụng Bluetooth và Wi-Fi.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletThree" = "Thiết lập kết nối tạm thời để chuyển dữ liệu giữa các thiết bị.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletTwo" = "Tạm thời phát mã ghép nối bằng cách sử dụng Bluetooth low energy.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsRadioSubtitle" = "Bật để khám phá và chuyển dữ liệu";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsRadioTitle" = "Bluetooth & Wi-Fi";
+
+/* Body text on a page describing the device sensors that the Nearby library needs. (250 chars) */
+"GNSSharedSensorPermissionDescription" = "Tính năng Lân cận sẽ sử dụng vị trí, micrô, Wi-Fi và Bluetooth.";
+
+/* Title in a screen header. (25 chars) */
+"GNSSharedTurnOnNearby" = "Bật Lân cận";
+

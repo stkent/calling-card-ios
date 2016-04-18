@@ -1,0 +1,151 @@
+Version 0.10.0 - March 2016
+=============================
+Resolved Issues:
+
+  - Fixed some memory leaks.
+  - Don't play audio if the current route isn't the speaker.
+  - Don't call the GNSPermission callback until the user has responded to the
+    Nearby permission dialog. This gives the app the ability to inform the user
+    that Nearby will not function if permission is denied.
+  - Apps that scan for beacons were required to add the bluetooth-central
+    background mode to their Info.plist files, even though they're only doing
+    foreground scanning.  This is no longer necessary.
+  - Sometimes publications would persist on the server after they had been
+    deallocated, causing their messages to continue to be delivered to nearby
+    devices for about 5 minutes longer.  This has been fixed.
+  - Type-less subscriptions should receive messages of all types, but this
+    wasn't happening.  This has been fixed.
+
+New Features:
+
+  - iBeacon support.  Apps that scan for beacons can now receive messages from
+    iBeacons as well as Eddystone beacons.
+  - Unlike Eddystone scanning, iBeacon scanning causes iOS to ask for location
+    permission.  If you only want to scan for Eddystone beacons, you can disable
+    iBeacon scanning and avoid this permission dialog.
+  - Publication/subscription status callbacks.  Track the status (inactive,
+    starting, active) to update your app's UI.
+  - Simplified Nearby permission dialog, and the ability to override it with
+    an application-specific solution.
+
+Deprecations:
+
+  - The GNSMessageManager methods for creating publications and subscriptions
+    with extra parameters have been deprecated in favor of the more flexible
+    block-based methods, which allow new parameters to be added in the future.
+    For example, here is the old way to pass a strategy when creating a
+    publication:
+
+    ```objective-c
+    _publication = [_messageManager publicationWithParams:
+        [GNSPublicationParams paramsWithMessage:message strategy:strategy]];
+    ```
+
+    And here is the new way:
+
+    ```objective-c
+    _publication = [_messageManager publicationWithMessage:message
+                                               paramsBlock:^(GNSPublicationParams *params) {
+                                                 params.strategy = strategy;
+                                               }];
+    ```
+
+  - Simplification of beacon scanning parameters in subscriptions.  Beacon
+    parameters are now separate and less confusing; there's no need to specify
+    the set of mediums and set it to scan mode, since these can be inferred.
+    The old parameters have been deprecated.  For example, here is the old way
+    to create a beacon scanning subscription:
+
+    ```objective-c
+    GNSStrategy *beaconStrategy =
+        [GNSStrategy strategyWithParamsBlock:^(GNSStrategyParams *params) {
+          params.includeBLEBeacons = YES;
+          params.discoveryMediums = kGNSDiscoveryMediumsBLE;
+          params.discoveryMode = kGNSDiscoveryModeScan;
+        }];
+    GNSSubscriptionParams *beaconParams =
+        [GNSSubscriptionParams paramsWithMessageNamespace:@"com.mycompany.mybeaconservice"
+                                                     type:@"mybeacontype"
+                                                 strategy:beaconStrategy];
+    _beaconSubscription =
+        [_messageManager subscriptionWithParams:beaconParams
+                            messageFoundHandler:messageFoundHandler
+                             messageLostHandler:messageLostHandler];
+    ```
+
+    And here is the new way:
+
+    ```objective-c
+    _beaconSubscription = [_messageManager
+        subscriptionWithMessageFoundHandler:messageFoundHandler
+                         messageLostHandler:messageLostHandler
+                                paramsBlock:^(GNSSubscriptionParams *params) {
+                                  params.deviceTypesToDiscover = kGNSDeviceBLEBeacon;
+                                  params.messageNamespace = @"com.mycompany.mybeaconservice";
+                                  params.type = @"mybeacontype";
+                                }];
+    ```
+
+Version 0.9.7 - November 2015
+=============================
+Resolved Issues:
+
+  - Nearby no longer disrupts audio being played by the app using Nearby.
+  - Reduced network traffic in some cases.
+  - Improved latency in some cases.
+  - Display the Nearby permission dialog only in cases where iOS requires
+    microphone or Bluetooth permission.
+  - Improved the Nearby permission dialog to make it less confusing.
+
+Other changes:
+
+  - Added README with code examples.
+  - Added this CHANGELOG file.
+  - Added docs to GNSPermission.
+
+Known issues:
+
+  - An unexpected Bluetooth pairing dialog may be displayed when Nearby is used
+    between iOS 8 and iOS 9 devices.  It appears to be an Apple bug, and there's
+    no known workaround besides upgrading to iOS 9.  Details here:
+    https://forums.developer.apple.com/thread/19113
+
+Version 0.9.6 - October 2015
+============================
+Resolved Issues:
+
+  - Improved reliability.
+  - Reduced latency.
+  - Reduced library size.
+  - Fixed a bug that caused an occasional crash.
+  - Updated translations.
+
+Version 0.9.5 - July 2015
+=========================
+Features:
+
+  - Added debug logging to GNSMessageManager, which can be helpful in tracking
+    down problems encountered by clients.  To enable debug logging, add this to
+    your initialization code:
+
+    ```objective-c
+    [GNSMessageManager setDebugLoggingEnabled:YES];
+    ```
+
+Resolved Issues:
+
+  - Fixed a memory leak.
+  - Added new translations.
+  - Reduced network bandwidth a bit.
+  - Fixed Swift compile errors.
+  - Added a missing dependency (CoreMedia) to fix a link error.
+
+Version 0.9.4 - July 2015
+=========================
+Initial public release.
+
+Resolved Issues:
+
+  - Auto-refresh of pubs/subs; they no longer time out after 10 minutes.
+  - Audio crash fix.
+  - Improved reliability.

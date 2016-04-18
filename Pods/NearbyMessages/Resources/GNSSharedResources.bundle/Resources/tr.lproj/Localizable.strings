@@ -1,0 +1,54 @@
+/* Header above a list of device sensors. Note the capitalization. (40 chars) */
+"GNSSharedNearbySensorsListTitle" = "ETRAFIMDAKİ SENSÖRLER";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonAllow" = "İzin ver";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonDeny" = "Reddet";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonLearnMore" = "Daha fazla bilgi";
+
+/* Title of an alert view or a screen. The %@ will be replaced with the name of the application. (80 chars) */
+"GNSSharedPermissionAlertTitle" = "%@ uygulamasının Etrafımda özelliğini kullanmasına izin verilsin mi?";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletOne" = "Cihazlar, ultrasona yakın bir frekansla kısa bir kod veya müzik tonları yayınlar. Bu kodu algılamak için mikrofonunuz kullanılır.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletThree" = "Bazı kişiler ultrasona yakın aralıktaki sesleri duyabilirler.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletTwo" = "Bir kod bulunursa, cihazları bağlamak için Google sunucularına gönderilir. Google sunucularına hiçbir bir ses gönderilmez.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsAudioSubtitle" = "Eşleme kodları gönderip alın";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsAudioTitle" = "Ses";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletFour" = "Eşleme kodları gönderip alınır, kablosuz ağlar karşılaştırılır ve veriler Google sunucuları kullanılarak aktarılır.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletOne" = "Bluetooth ve kablosuz bağlantı kullanarak cihazları ve yakındaki yerleri keşfedin.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletThree" = "Cihazlar arasında veri aktarmak için geçici bir bağlantı oluşturulur.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletTwo" = "Bluetooth düşük enerji bağlantısıyla geçici olarak bir eşleme kodu yayınlanır.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsRadioSubtitle" = "Keşif ve veri aktarımı için açın";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsRadioTitle" = "Bluetooth ve Kablosuz";
+
+/* Body text on a page describing the device sensors that the Nearby library needs. (250 chars) */
+"GNSSharedSensorPermissionDescription" = "Etrafımda özelliği konum, mikrofon, Kablosuz bağlantı ve Bluetooth'u kullanır.";
+
+/* Title in a screen header. (25 chars) */
+"GNSSharedTurnOnNearby" = "Etrafımda özelliğini aç";
+

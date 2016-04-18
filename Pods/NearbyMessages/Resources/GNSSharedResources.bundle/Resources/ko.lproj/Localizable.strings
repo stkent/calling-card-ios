@@ -1,0 +1,54 @@
+/* Header above a list of device sensors. Note the capitalization. (40 chars) */
+"GNSSharedNearbySensorsListTitle" = "주변 센서";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonAllow" = "허용";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonDeny" = "거부";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonLearnMore" = "자세히 알아보기";
+
+/* Title of an alert view or a screen. The %@ will be replaced with the name of the application. (80 chars) */
+"GNSSharedPermissionAlertTitle" = "%@에서 Nearby를 사용하도록 허용하시겠습니까?";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletOne" = "기기에서 초음파에 가까운 짧은 코드 또는 고른음을 재생합니다. 이 코드를 감지하기 위해 마이크가 사용됩니다.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletThree" = "일부 사람들은 초음파에 가까운 영역에서 소리를 들을 수도 있습니다.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletTwo" = "코드가 발견되면 Google 서버로 전송되어 기기를 연결합니다. 오디오는 Google 서버로 전송되지 않습니다.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsAudioSubtitle" = "페어링 코드 주고받기";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsAudioTitle" = "오디오";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletFour" = "Google 서버를 사용하여 페어링 코드를 교환하고 Wi-Fi 네트워크를 비교하고 데이터를 전송합니다.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletOne" = "블루투스와 Wi-Fi를 사용하여 기기와 주변 장소를 검색합니다.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletThree" = "일시적으로 연결을 설정하여 기기 간에 데이터를 전송합니다.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletTwo" = "일시적으로 블루투스 저전력을 사용하여 페어링 코드를 브로드캐스트합니다.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsRadioSubtitle" = "탐색 및 데이터 전송을 위해 사용 설정";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsRadioTitle" = "블루투스 및 Wi-Fi";
+
+/* Body text on a page describing the device sensors that the Nearby library needs. (250 chars) */
+"GNSSharedSensorPermissionDescription" = "Nearby에서 위치, 마이크, Wi-Fi, 블루투스를 사용합니다.";
+
+/* Title in a screen header. (25 chars) */
+"GNSSharedTurnOnNearby" = "Nearby 사용 설정";
+

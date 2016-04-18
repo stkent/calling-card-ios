@@ -1,0 +1,54 @@
+/* Header above a list of device sensors. Note the capitalization. (40 chars) */
+"GNSSharedNearbySensorsListTitle" = "مستشعرات الأجهزة المجاورة";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonAllow" = "سماح";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonDeny" = "رفض";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonLearnMore" = "مزيد من المعلومات";
+
+/* Title of an alert view or a screen. The %@ will be replaced with the name of the application. (80 chars) */
+"GNSSharedPermissionAlertTitle" = "هل تريد السماح لـ %@ باستخدام ميزة الأجهزة المجاورة؟";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletOne" = "تشغِّل الأجهزة شفرة بصوت فوق سمعي شبه مسموع أو نغمات موسيقية. ويتم استخدام الميكروفون لاكتشاف هذه الشفرة.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletThree" = "قد يتمكن بعض الأشخاص من سماع الأصوات في نطاق الصوت فوق السمعي شبه المسموع.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletTwo" = "‏عند العثور على شفرة ما، يتم إرسالها إلى خوادم Google لتوصيل الأجهزة. ولا يتم إرسال الصوت إلى خوادم Google.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsAudioSubtitle" = "إرسال شفرات إقران وتلقيها";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsAudioTitle" = "صوت";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletFour" = "‏يمكنك تبديل شفرات الإقران والمقارنة بين شبكات Wi-Fi ونقل البيانات باستخدام خوادم Google.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletOne" = "‏يمكنك اكتشاف الأجهزة والأماكن المجاورة باستخدام البلوتوث وWi-Fi.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletThree" = "يمكنك إنشاء اتصال مؤقت لنقل البيانات بين الأجهزة.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletTwo" = "يمكنك إرسال شفرة إقران مؤقتًا باستخدام طاقة بلوتوث منخفضة.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsRadioSubtitle" = "تمكين الاستكشاف ونقل البيانات";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsRadioTitle" = "‏بلوتوث وWi-Fi";
+
+/* Body text on a page describing the device sensors that the Nearby library needs. (250 chars) */
+"GNSSharedSensorPermissionDescription" = "‏تستفيد ميزة الأجهزة المجاورة من الموقع والميكروفون وWi-Fi وبلوتوث.";
+
+/* Title in a screen header. (25 chars) */
+"GNSSharedTurnOnNearby" = "تشغيل الأجهزة المجاورة";
+

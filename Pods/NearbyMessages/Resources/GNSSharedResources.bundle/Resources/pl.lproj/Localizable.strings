@@ -1,0 +1,54 @@
+/* Header above a list of device sensors. Note the capitalization. (40 chars) */
+"GNSSharedNearbySensorsListTitle" = "CZUJNIKI W POBLIŻU";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonAllow" = "Zezwól";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonDeny" = "Odmów";
+
+/* Button on an alert view. (20 chars) */
+"GNSSharedPermissionAlertButtonLearnMore" = "Więcej informacji";
+
+/* Title of an alert view or a screen. The %@ will be replaced with the name of the application. (80 chars) */
+"GNSSharedPermissionAlertTitle" = "Zezwolić aplikacji %@ na korzystanie z funkcji W pobliżu?";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletOne" = "Urządzenia odtwarzają tony muzyczne lub krótki kod nadawany w częstotliwości bliskiej ultradźwiękowej. Wykrywa je mikrofon Twojego urządzenia.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletThree" = "Niektóre osoby mogą słyszeć dźwięki w częstotliwości bliskiej ultradźwiękowej.";
+
+/* Element of a sub-list describing how the audio sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsAudioBulletTwo" = "Po odebraniu kod zostaje wysłany na serwery Google, by można było połączyć urządzenia. Na serwery Google nie są przesyłane żadne zarejestrowane dźwięki.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsAudioSubtitle" = "Wysyłanie i odbieranie kodów parowania";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsAudioTitle" = "Dźwięk";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletFour" = "Wymiana kodów parowania, porównywanie sieci Wi-Fi i przesyłanie danych przy użyciu serwerów Google.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletOne" = "Wykrywanie urządzeń i miejsc w pobliżu przez Bluetooth i Wi-Fi.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletThree" = "Nawiązanie tymczasowego połączenia w celu przesłania danych między urządzeniami.";
+
+/* Element of a sub-list describing how the Bluetooth sensor is used. Will have a • character prepended. (200 chars) */
+"GNSSharedPermissionsRadioBulletTwo" = "Tymczasowe przesyłanie kodu parowania przy użyciu technologii Bluetooth Low Energy.";
+
+/* Subtitle of an item in the list of device sensors (80 chars) */
+"GNSSharedPermissionsRadioSubtitle" = "Włącz, by wykrywać urządzenia i przesyłać dane";
+
+/* Title of an item in the list of device sensors. (30 chars) */
+"GNSSharedPermissionsRadioTitle" = "Bluetooth i Wi-Fi";
+
+/* Body text on a page describing the device sensors that the Nearby library needs. (250 chars) */
+"GNSSharedSensorPermissionDescription" = "Funkcja W pobliżu używa lokalizacji, mikrofonu, Wi-Fi i Bluetootha.";
+
+/* Title in a screen header. (25 chars) */
+"GNSSharedTurnOnNearby" = "Włącz funkcję W pobliżu";
+
