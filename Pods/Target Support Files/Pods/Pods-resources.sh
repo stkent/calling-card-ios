@@ -58,11 +58,13 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "NearbyMessages/Resources/ic_nearby_48pt.xcassets"
   install_resource "NearbyMessages/Resources/ic_expand_more.xcassets"
   install_resource "NearbyMessages/Resources/GNSSharedResources.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "NearbyMessages/Resources/ic_nearby_48pt.xcassets"
   install_resource "NearbyMessages/Resources/ic_expand_more.xcassets"
   install_resource "NearbyMessages/Resources/GNSSharedResources.bundle"

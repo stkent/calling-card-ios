@@ -1,8 +1,26 @@
 PODS:
+  - Google/Core (2.0.4):
+    - GoogleInterchangeUtilities (~> 1.0)
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+    - GoogleUtilities (~> 1.1)
+  - Google/SignIn (2.0.4):
+    - Google/Core
+    - GoogleSignIn (~> 3.0)
+  - GoogleAppUtilities (1.1.0):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleAuthUtilities (2.0.0):
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
   - GoogleInterchangeUtilities (1.2.0):
     - GoogleSymbolUtilities (~> 1.0)
   - GoogleNetworkingUtilities (1.2.0):
     - GoogleSymbolUtilities (~> 1.0)
+  - GoogleSignIn (3.0.0):
+    - GoogleAppUtilities (~> 1.0)
+    - GoogleAuthUtilities (~> 2.0)
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleUtilities (~> 1.0)
   - GoogleSymbolUtilities (1.1.0)
   - GoogleUtilities (1.3.0):
     - GoogleSymbolUtilities (~> 1.0)
@@ -12,11 +30,16 @@ PODS:
     - GoogleUtilities (~> 1.0)
 
 DEPENDENCIES:
+  - Google/SignIn (= 2.0.4)
   - NearbyMessages (= 0.10.0)
 
 SPEC CHECKSUMS:
+  Google: d0932824c5b97c96be489aa6f4e8cd6c294d637d
+  GoogleAppUtilities: 974598e8ed618c74ead33541d9caffbc3d144266
+  GoogleAuthUtilities: 79e4143c77a08081a480b08df27a066cc8944f43
   GoogleInterchangeUtilities: 427382e42d8a340038bec37c6fdfd316e14b5fa2
   GoogleNetworkingUtilities: ec1e9911aca811eb18b7144394fee6168b607785
+  GoogleSignIn: 3d571172b8603be39dcb1705d8217146bb76fe62
   GoogleSymbolUtilities: eb3965ea12710569c7b80db198a39e39b18613f7
   GoogleUtilities: 5c653f7df2eedf0ce0efdfe5afe4f831f375fd7a
   NearbyMessages: 2bbdf1a484be76142b68405b41e236b25846b93a
