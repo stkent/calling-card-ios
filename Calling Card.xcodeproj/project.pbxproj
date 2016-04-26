@@ -7,20 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		176F545B1CD2B24000BEE2DE /* SignInNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176F545A1CD2B24000BEE2DE /* SignInNavigationController.swift */; };
+		179549E21CCFBEE400114389 /* NearbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179549E11CCFBEE400114389 /* NearbyViewController.swift */; };
+		179549E41CCFBF8800114389 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179549E31CCFBF8800114389 /* User.swift */; };
+		179D48F11CD4285500262BE5 /* OperationControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D48F01CD4285500262BE5 /* OperationControlTableViewCell.swift */; };
+		179D48F31CD430E300262BE5 /* NearbyAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D48F21CD430E300262BE5 /* NearbyAPIOperation.swift */; };
+		179D48F51CD51F4900262BE5 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D48F41CD51F4900262BE5 /* UserTableViewCell.swift */; };
+		179D48F71CD53FED00262BE5 /* PublishedUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D48F61CD53FED00262BE5 /* PublishedUserTableViewCell.swift */; };
+		17A105971CCFC24E0041E514 /* CurrentUserRecipient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A105961CCFC24E0041E514 /* CurrentUserRecipient.swift */; };
+		17A105991CCFFC350041E514 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A105981CCFFC350041E514 /* SignInViewController.swift */; };
 		3710F6CACA89E859FEA9FB7B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CAEA64975357B66B60D879 /* libPods.a */; };
 		AC22C5E31CC86A34000DFF07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC22C5E21CC86A34000DFF07 /* GoogleService-Info.plist */; };
 		AC46804C1CC477F0000CEE2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC46804B1CC477F0000CEE2E /* AppDelegate.swift */; };
-		AC46804E1CC477F0000CEE2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC46804D1CC477F0000CEE2E /* ViewController.swift */; };
 		AC4680511CC477F0000CEE2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC46804F1CC477F0000CEE2E /* Main.storyboard */; };
 		AC4680531CC477F0000CEE2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC4680521CC477F0000CEE2E /* Assets.xcassets */; };
 		AC4680561CC477F0000CEE2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4680541CC477F0000CEE2E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		176F545A1CD2B24000BEE2DE /* SignInNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInNavigationController.swift; sourceTree = "<group>"; };
+		179549E11CCFBEE400114389 /* NearbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyViewController.swift; sourceTree = "<group>"; };
+		179549E31CCFBF8800114389 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		179D48F01CD4285500262BE5 /* OperationControlTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationControlTableViewCell.swift; sourceTree = "<group>"; };
+		179D48F21CD430E300262BE5 /* NearbyAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyAPIOperation.swift; sourceTree = "<group>"; };
+		179D48F41CD51F4900262BE5 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		179D48F61CD53FED00262BE5 /* PublishedUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishedUserTableViewCell.swift; sourceTree = "<group>"; };
+		17A105961CCFC24E0041E514 /* CurrentUserRecipient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserRecipient.swift; sourceTree = "<group>"; };
+		17A105981CCFFC350041E514 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		AC22C5E21CC86A34000DFF07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC4680481CC477F0000CEE2E /* Calling Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calling Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC46804B1CC477F0000CEE2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC46804D1CC477F0000CEE2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC4680501CC477F0000CEE2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC4680521CC477F0000CEE2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC4680551CC477F0000CEE2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,11 +92,19 @@
 			isa = PBXGroup;
 			children = (
 				AC46804B1CC477F0000CEE2E /* AppDelegate.swift */,
-				AC46804D1CC477F0000CEE2E /* ViewController.swift */,
-				AC46804F1CC477F0000CEE2E /* Main.storyboard */,
 				AC4680521CC477F0000CEE2E /* Assets.xcassets */,
-				AC4680541CC477F0000CEE2E /* LaunchScreen.storyboard */,
+				176F545A1CD2B24000BEE2DE /* SignInNavigationController.swift */,
 				AC4680571CC477F0000CEE2E /* Info.plist */,
+				AC4680541CC477F0000CEE2E /* LaunchScreen.storyboard */,
+				AC46804F1CC477F0000CEE2E /* Main.storyboard */,
+				179D48F21CD430E300262BE5 /* NearbyAPIOperation.swift */,
+				179549E11CCFBEE400114389 /* NearbyViewController.swift */,
+				179D48F01CD4285500262BE5 /* OperationControlTableViewCell.swift */,
+				179549E31CCFBF8800114389 /* User.swift */,
+				17A105961CCFC24E0041E514 /* CurrentUserRecipient.swift */,
+				17A105981CCFFC350041E514 /* SignInViewController.swift */,
+				179D48F41CD51F4900262BE5 /* UserTableViewCell.swift */,
+				179D48F61CD53FED00262BE5 /* PublishedUserTableViewCell.swift */,
 			);
 			path = "Calling Card";
 			sourceTree = "<group>";
@@ -216,8 +240,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC46804E1CC477F0000CEE2E /* ViewController.swift in Sources */,
+				176F545B1CD2B24000BEE2DE /* SignInNavigationController.swift in Sources */,
+				179D48F31CD430E300262BE5 /* NearbyAPIOperation.swift in Sources */,
+				179D48F71CD53FED00262BE5 /* PublishedUserTableViewCell.swift in Sources */,
+				179549E41CCFBF8800114389 /* User.swift in Sources */,
 				AC46804C1CC477F0000CEE2E /* AppDelegate.swift in Sources */,
+				17A105971CCFC24E0041E514 /* CurrentUserRecipient.swift in Sources */,
+				17A105991CCFFC350041E514 /* SignInViewController.swift in Sources */,
+				179549E21CCFBEE400114389 /* NearbyViewController.swift in Sources */,
+				179D48F11CD4285500262BE5 /* OperationControlTableViewCell.swift in Sources */,
+				179D48F51CD51F4900262BE5 /* UserTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

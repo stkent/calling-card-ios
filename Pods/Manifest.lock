@@ -28,10 +28,14 @@ PODS:
     - GoogleInterchangeUtilities (~> 1.0)
     - GoogleNetworkingUtilities (~> 1.0)
     - GoogleUtilities (~> 1.0)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
 
 DEPENDENCIES:
   - Google/SignIn (= 2.0.4)
   - NearbyMessages (= 0.10.0)
+  - SDWebImage (= 3.7.5)
 
 SPEC CHECKSUMS:
   Google: d0932824c5b97c96be489aa6f4e8cd6c294d637d
@@ -43,5 +47,6 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: eb3965ea12710569c7b80db198a39e39b18613f7
   GoogleUtilities: 5c653f7df2eedf0ce0efdfe5afe4f831f375fd7a
   NearbyMessages: 2bbdf1a484be76142b68405b41e236b25846b93a
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
 
 COCOAPODS: 0.39.0
