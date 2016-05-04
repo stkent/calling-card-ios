@@ -39,21 +39,3 @@ final class User: NSObject {
     }
 
 }
-
-extension User: NSCoding {
-    
-    @objc func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(id, forKey: User.ID_KEY)
-        aCoder.encodeObject(gidProfileData, forKey: User.GID_PROFILE_DATA_KEY)
-    }
-    
-    @objc convenience init?(coder aDecoder: NSCoder) {
-        guard let id = aDecoder.decodeObjectForKey(User.ID_KEY) as? String,
-            gidProfileData = aDecoder.decodeObjectForKey(User.GID_PROFILE_DATA_KEY) as? GIDProfileData else {
-                return nil
-        }
-        
-        self.init(id: id, gidProfileData: gidProfileData)
-    }
-    
-}

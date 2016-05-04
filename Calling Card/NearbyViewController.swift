@@ -11,8 +11,9 @@ import UIKit
 final class NearbyViewController: UIViewController {
     
     static let storyboardId = "NearbyViewController"
-    private static let SAVED_USERS_KEY = "SavedUsersKey"
     
+    private let savedUsersManager = SavedUsersManager()
+
     private var currentUser: User?
     
     private var nearbyUsers: [User] = [] {
@@ -57,16 +58,10 @@ final class NearbyViewController: UIViewController {
         }
     }()
     
-    @IBOutlet private weak var tableView: UITableView!
-    
-    @IBAction func signOutButtonTapped(sender: UIBarButtonItem) {
-        cancelAllNearbyActivity()
-        clearUser()
-    }
-    
     private var messageToPublish: GNSMessage? {
         if let currentUser = currentUser {
-            return GNSMessage(content: NSKeyedArchiver.archivedDataWithRootObject(currentUser))
+            // todo: compute json representation here
+            return GNSMessage(content: "".dataUsingEncoding(NSUTF8StringEncoding))
         }
         
         return nil
@@ -79,7 +74,14 @@ final class NearbyViewController: UIViewController {
     private var activelySubscribing: Bool {
         return GNSPermission.isGranted() && currentSubscriptionReference != nil
     }
-    
+
+    @IBOutlet private weak var tableView: UITableView!
+
+    @IBAction func signOutButtonTapped(sender: UIBarButtonItem) {
+        cancelAllNearbyActivity()
+        clearUser()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         GNSPermission.setGranted(false)
@@ -100,12 +102,6 @@ final class NearbyViewController: UIViewController {
         tableView.delegate = self
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
-    }
-    
-    private func getSavedUsers() -> [User] {
-        return NSUserDefaults
-            .standardUserDefaults()
-            .objectForKey(NearbyViewController.SAVED_USERS_KEY) as? [User] ?? [User]()
     }
     
     private func attemptToPublish() {
@@ -220,20 +216,13 @@ extension NearbyViewController: UITableViewDelegate {
         
         if (row >= NearbyViewController.STATIC_CELL_COUNT) {
             let tappedUser = nearbyUsers[row - NearbyViewController.STATIC_CELL_COUNT]
-            
+
             let savePrompt = UIAlertController()
             savePrompt.message = "Save \(tappedUser.name)'s info?"
             savePrompt.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
             savePrompt.addAction(UIAlertAction(title: "Save", style: .Default) { _ in
-                var savedUsers = self.getSavedUsers()
-                
-                if !savedUsers.contains(tappedUser) {
-                    savedUsers = savedUsers + [tappedUser]
-                    
-                    NSUserDefaults
-                        .standardUserDefaults()
-                        .setObject(savedUsers, forKey: NearbyViewController.SAVED_USERS_KEY)
-                }
+                self.savedUsersManager.saveUser(tappedUser)
+                self.tableView.reloadData()
             })
         }
     }

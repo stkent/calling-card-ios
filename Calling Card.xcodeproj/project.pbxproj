@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1742D39A1CDA9C8D0022B036 /* SavedUsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1742D3991CDA9C8D0022B036 /* SavedUsersManager.swift */; };
 		176F545B1CD2B24000BEE2DE /* SignInNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176F545A1CD2B24000BEE2DE /* SignInNavigationController.swift */; };
 		179549E21CCFBEE400114389 /* NearbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179549E11CCFBEE400114389 /* NearbyViewController.swift */; };
 		179549E41CCFBF8800114389 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179549E31CCFBF8800114389 /* User.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1742D3991CDA9C8D0022B036 /* SavedUsersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedUsersManager.swift; sourceTree = "<group>"; };
 		176F545A1CD2B24000BEE2DE /* SignInNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInNavigationController.swift; sourceTree = "<group>"; };
 		179549E11CCFBEE400114389 /* NearbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyViewController.swift; sourceTree = "<group>"; };
 		179549E31CCFBF8800114389 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				17A105981CCFFC350041E514 /* SignInViewController.swift */,
 				179D48F41CD51F4900262BE5 /* UserTableViewCell.swift */,
 				179D48F61CD53FED00262BE5 /* PublishedUserTableViewCell.swift */,
+				1742D3991CDA9C8D0022B036 /* SavedUsersManager.swift */,
 			);
 			path = "Calling Card";
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				AC46804C1CC477F0000CEE2E /* AppDelegate.swift in Sources */,
 				17A105971CCFC24E0041E514 /* CurrentUserRecipient.swift in Sources */,
 				17A105991CCFFC350041E514 /* SignInViewController.swift in Sources */,
+				1742D39A1CDA9C8D0022B036 /* SavedUsersManager.swift in Sources */,
 				179549E21CCFBEE400114389 /* NearbyViewController.swift in Sources */,
 				179D48F11CD4285500262BE5 /* OperationControlTableViewCell.swift in Sources */,
 				179D48F51CD51F4900262BE5 /* UserTableViewCell.swift in Sources */,
