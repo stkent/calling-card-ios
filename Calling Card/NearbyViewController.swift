@@ -59,9 +59,10 @@ final class NearbyViewController: UIViewController {
     }()
     
     private var messageToPublish: GNSMessage? {
-        if let currentUser = currentUser {
-            // todo: compute json representation here
-            return GNSMessage(content: "".dataUsingEncoding(NSUTF8StringEncoding))
+        if let currentUser = currentUser,
+            currentUserJSON = currentUser.toNSData() {
+            
+                return GNSMessage(content: currentUserJSON)
         }
         
         return nil
@@ -112,12 +113,9 @@ final class NearbyViewController: UIViewController {
     
     private func attemptToSubscribe() {
         currentSubscriptionReference = messageManager.subscriptionWithMessageFoundHandler(
-            { [weak self] receivedMessage in
-                
-                // todo: update to use json format shared by android
-                
+            { [weak self] foundMessage in
                 if let _self = self,
-                    nearbyUser = NSKeyedUnarchiver.unarchiveObjectWithData(receivedMessage.content) as? User
+                    nearbyUser = User(nsData: foundMessage.content)
                     where !_self.nearbyUsers.map({ user in return user.id }).contains(nearbyUser.id) {
                     
                         _self.nearbyUsers = [nearbyUser] + _self.nearbyUsers
@@ -125,7 +123,7 @@ final class NearbyViewController: UIViewController {
             },
             messageLostHandler: { [weak self] lostMessage in
                 if let _self = self,
-                    lostUser = NSKeyedUnarchiver.unarchiveObjectWithData(lostMessage.content) as? User {
+                    lostUser = User(nsData: lostMessage.content) {
                     
                         _self.nearbyUsers = _self.nearbyUsers.filter { user in return user.id != lostUser.id }
                 }

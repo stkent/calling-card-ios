@@ -10,6 +10,11 @@ import Foundation
 
 final class User: NSObject {
     
+    private static let KEY_ID = "ID"
+    private static let KEY_NAME = "NAME"
+    private static let KEY_EMAIL_ADDRESS = "EMAIL_ADDRESS"
+    private static let KEY_PHOTO_URL_STRING = "PHOTO_URL_STRING"
+    
     let id: String
     let name: String
     let emailAddress: String
@@ -35,6 +40,41 @@ final class User: NSObject {
             name: gidProfileData.name,
             emailAddress: gidProfileData.email,
             photoUrlString: gidProfileData.imageURLWithDimension(300).absoluteString)
+    }
+    
+    convenience init?(nsData: NSData) {
+        guard let
+            deserializedObject = try? NSJSONSerialization.JSONObjectWithData(nsData, options: []),
+            dictRepresentation = deserializedObject as? [String: String]
+            else {
+                return nil
+        }
+        
+        guard let
+            id = dictRepresentation[User.KEY_ID],
+            name = dictRepresentation[User.KEY_NAME],
+            emailAddress = dictRepresentation[User.KEY_EMAIL_ADDRESS],
+            photoUrlString = dictRepresentation[User.KEY_PHOTO_URL_STRING]
+            else {
+                return nil
+        }
+        
+        self.init(
+            id: id,
+            name: name,
+            emailAddress: emailAddress,
+            photoUrlString: photoUrlString)
+    }
+    
+    func toNSData() -> NSData? {
+        let dictRepresentation: [String: String] = [
+            User.KEY_ID: id,
+            User.KEY_NAME: name,
+            User.KEY_EMAIL_ADDRESS: emailAddress,
+            User.KEY_PHOTO_URL_STRING: photoUrlString
+        ]
+        
+        return try? NSJSONSerialization.dataWithJSONObject(dictRepresentation, options: [])
     }
 
 }
