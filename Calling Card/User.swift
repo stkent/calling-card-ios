@@ -10,21 +10,21 @@ import Foundation
 
 final class User: NSObject {
     
-    private static let KEY_ID = "ID"
-    private static let KEY_NAME = "NAME"
-    private static let KEY_EMAIL_ADDRESS = "EMAIL_ADDRESS"
-    private static let KEY_PHOTO_URL_STRING = "PHOTO_URL_STRING"
+    private static let KEY_ID = "id"
+    private static let KEY_NAME = "name"
+    private static let KEY_EMAIL_ADDRESS = "emailAddress"
+    private static let KEY_PHOTO_URL_STRING = "photoUrlString"
     
     let id: String
     let name: String
     let emailAddress: String
-    let photoUrlString: String
+    let photoUrlString: String?
     
     private init(
         id: String,
         name: String,
         emailAddress: String,
-        photoUrlString: String) {
+        photoUrlString: String?) {
         
             self.id = id
             self.name = name
@@ -53,8 +53,7 @@ final class User: NSObject {
         guard let
             id = dictRepresentation[User.KEY_ID],
             name = dictRepresentation[User.KEY_NAME],
-            emailAddress = dictRepresentation[User.KEY_EMAIL_ADDRESS],
-            photoUrlString = dictRepresentation[User.KEY_PHOTO_URL_STRING]
+            emailAddress = dictRepresentation[User.KEY_EMAIL_ADDRESS]
             else {
                 return nil
         }
@@ -63,16 +62,19 @@ final class User: NSObject {
             id: id,
             name: name,
             emailAddress: emailAddress,
-            photoUrlString: photoUrlString)
+            photoUrlString: dictRepresentation[User.KEY_PHOTO_URL_STRING])
     }
     
     func toNSData() -> NSData? {
-        let dictRepresentation: [String: String] = [
+        var dictRepresentation: [String: String] = [
             User.KEY_ID: id,
             User.KEY_NAME: name,
-            User.KEY_EMAIL_ADDRESS: emailAddress,
-            User.KEY_PHOTO_URL_STRING: photoUrlString
+            User.KEY_EMAIL_ADDRESS: emailAddress
         ]
+        
+        if let photoUrlString = photoUrlString {
+            dictRepresentation[User.KEY_PHOTO_URL_STRING] = photoUrlString
+        }
         
         return try? NSJSONSerialization.dataWithJSONObject(dictRepresentation, options: [])
     }

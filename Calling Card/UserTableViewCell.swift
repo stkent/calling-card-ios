@@ -27,9 +27,12 @@ class UserTableViewCell: UITableViewCell {
     var user: User?
     
     func bindUser(user: User) {
-        photoImageView.sd_setImageWithURL(NSURL(string: user.photoUrlString))
         userNameLabel.text = user.name
         userEmailAddressLabel.text = user.emailAddress
+        
+        if let photoUrlString = user.photoUrlString {
+            photoImageView.sd_setImageWithURL(NSURL(string: photoUrlString))
+        }
     }
     
 }
