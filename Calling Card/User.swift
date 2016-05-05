@@ -10,32 +10,31 @@ import Foundation
 
 final class User: NSObject {
     
-    private static let ID_KEY = "ID"
-    private static let GID_PROFILE_DATA_KEY = "GID_PROFILE_DATA"
-    
     let id: String
+    let name: String
+    let emailAddress: String
+    let photoUrlString: String
     
-    private let gidProfileData: GIDProfileData
-    
-    private init(id: String, gidProfileData: GIDProfileData) {
-        self.id = id
-        self.gidProfileData = gidProfileData
+    private init(
+        id: String,
+        name: String,
+        emailAddress: String,
+        photoUrlString: String) {
+        
+            self.id = id
+            self.name = name
+            self.emailAddress = emailAddress
+            self.photoUrlString = photoUrlString
     }
     
     convenience init(gidGoogleUser: GIDGoogleUser) {
-        self.init(id: gidGoogleUser.userID, gidProfileData: gidGoogleUser.profile)
-    }
-    
-    var name: String {
-        return gidProfileData.name
-    }
-    
-    var emailAddress: String {
-        return gidProfileData.email
-    }
-
-    func getPhotoURL(dimension: Int) -> NSURL {
-        return gidProfileData.imageURLWithDimension(UInt(dimension))
+        let gidProfileData = gidGoogleUser.profile
+        
+        self.init(
+            id: gidGoogleUser.userID,
+            name: gidProfileData.name,
+            emailAddress: gidProfileData.email,
+            photoUrlString: gidProfileData.imageURLWithDimension(300).absoluteString)
     }
 
 }

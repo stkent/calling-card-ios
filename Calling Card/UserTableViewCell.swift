@@ -27,8 +27,7 @@ class UserTableViewCell: UITableViewCell {
     var user: User?
     
     func bindUser(user: User) {
-        let photoPixelSize: Int = Int(photoImageView.bounds.width)
-        photoImageView.sd_setImageWithURL(user.getPhotoURL(photoPixelSize))
+        photoImageView.sd_setImageWithURL(NSURL(string: user.photoUrlString))
         userNameLabel.text = user.name
         userEmailAddressLabel.text = user.emailAddress
     }
