@@ -93,18 +93,18 @@
 			children = (
 				AC46804B1CC477F0000CEE2E /* AppDelegate.swift */,
 				AC4680521CC477F0000CEE2E /* Assets.xcassets */,
-				176F545A1CD2B24000BEE2DE /* SignInNavigationController.swift */,
+				17A105961CCFC24E0041E514 /* CurrentUserRecipient.swift */,
 				AC4680571CC477F0000CEE2E /* Info.plist */,
 				AC4680541CC477F0000CEE2E /* LaunchScreen.storyboard */,
 				AC46804F1CC477F0000CEE2E /* Main.storyboard */,
 				179D48F21CD430E300262BE5 /* NearbyAPIOperation.swift */,
 				179549E11CCFBEE400114389 /* NearbyViewController.swift */,
 				179D48F01CD4285500262BE5 /* OperationControlTableViewCell.swift */,
-				179549E31CCFBF8800114389 /* User.swift */,
-				17A105961CCFC24E0041E514 /* CurrentUserRecipient.swift */,
-				17A105981CCFFC350041E514 /* SignInViewController.swift */,
-				179D48F41CD51F4900262BE5 /* UserTableViewCell.swift */,
 				1742D3991CDA9C8D0022B036 /* SavedUsersManager.swift */,
+				176F545A1CD2B24000BEE2DE /* SignInNavigationController.swift */,
+				17A105981CCFFC350041E514 /* SignInViewController.swift */,
+				179549E31CCFBF8800114389 /* User.swift */,
+				179D48F41CD51F4900262BE5 /* UserTableViewCell.swift */,
 			);
 			path = "Calling Card";
 			sourceTree = "<group>";
