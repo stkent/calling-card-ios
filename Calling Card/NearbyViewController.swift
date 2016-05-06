@@ -22,6 +22,12 @@ final class NearbyViewController: UIViewController {
         }
     }
     
+    private var savedUsers: [User] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     private var gnsPermissionProxy: GNSPermission?
     
     private var currentPublicationReference: GNSPublication? {
@@ -101,7 +107,7 @@ final class NearbyViewController: UIViewController {
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.estimatedRowHeight = 44
+        tableView.estimatedRowHeight = 48
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
@@ -160,15 +166,27 @@ extension NearbyViewController: CurrentUserRecipient {
 
 extension NearbyViewController: UITableViewDataSource {
     
-    private static let STATIC_CELL_COUNT = 3
+    /**
+     * Count includes:
+     * - Publish control
+     * - Published user card
+     * - Subscribe control
+     * - "Saved Cards" header
+     */
+    private static let STATIC_CELL_COUNT = 4
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NearbyViewController.STATIC_CELL_COUNT + nearbyUsers.count
+        return NearbyViewController.STATIC_CELL_COUNT
+            + max(nearbyUsers.count, 1) // Either display all nearby users, or a single status row
+            + max(savedUsers.count, 1) // Either display all saved users, or a single status row
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let savedCardsHeaderIndex = (NearbyViewController.STATIC_CELL_COUNT - 1) + max(nearbyUsers.count, 1)
         
         switch indexPath.row {
+            
+        // Publish control
         case 0:
             let result = tableView.dequeueReusableCellWithIdentifier(
                 OperationControlTableViewCell.reuseIdentifier) as? OperationControlTableViewCell
@@ -178,6 +196,8 @@ extension NearbyViewController: UITableViewDataSource {
             result?.controlDelegate = self
             
             return result ?? UITableViewCell()
+        
+        // Published user card
         case 1:
             let result = tableView.dequeueReusableCellWithIdentifier(
                 UserTableViewCell.reuseIdentifier) as? UserTableViewCell
@@ -186,6 +206,8 @@ extension NearbyViewController: UITableViewDataSource {
             result?.setBorderColor(activelyPublishing ? .Green : .Red)
             
             return result ?? UITableViewCell()
+        
+        // Subscribe control
         case 2:
             let result = tableView.dequeueReusableCellWithIdentifier(
                 OperationControlTableViewCell.reuseIdentifier) as? OperationControlTableViewCell
@@ -195,16 +217,52 @@ extension NearbyViewController: UITableViewDataSource {
             result?.controlDelegate = self
             
             return result ?? UITableViewCell()
+        
+        // "Saved Cards" header
+        case savedCardsHeaderIndex:
+            return tableView.dequeueReusableCellWithIdentifier("SavedCardsHeaderTableViewCell")
+                ?? UITableViewCell()
+            
         default:
-            let result = tableView.dequeueReusableCellWithIdentifier(
-                UserTableViewCell.reuseIdentifier) as? UserTableViewCell
+            if indexPath.row > savedCardsHeaderIndex {
+                // Saved cards section
+                if savedUsers.count > 0 {
+                    return standardTableViewCellForUser(
+                        savedUsers[indexPath.row - NearbyViewController.STATIC_CELL_COUNT - nearbyUsers.count])
+                } else {
+                    return statusTableViewCellWithString("No saved cards found!")
+                }
+            } else if indexPath.row < savedCardsHeaderIndex {
+                // Nearby users section
+                if nearbyUsers.count > 0 {
+                    return standardTableViewCellForUser(
+                        nearbyUsers[indexPath.row - (NearbyViewController.STATIC_CELL_COUNT - 1)])
+                } else {
+                    return statusTableViewCellWithString("No nearby users detected!")
+                }
+            }
             
-            result?.bindUser(nearbyUsers[indexPath.row - NearbyViewController.STATIC_CELL_COUNT])
-            
-            return result ?? UITableViewCell()
+            fatalError("This code path should never be exercised")
         }
     }
-
+    
+    private func standardTableViewCellForUser(user: User) -> UITableViewCell {
+        let result = tableView.dequeueReusableCellWithIdentifier(
+            UserTableViewCell.reuseIdentifier) as? UserTableViewCell
+        
+        result?.bindUser(user)
+        
+        return result ?? UITableViewCell()
+    }
+    
+    private func statusTableViewCellWithString(string: String) -> UITableViewCell {
+        let result = tableView.dequeueReusableCellWithIdentifier(
+            StatusTableViewCell.reuseIdentifier) as? StatusTableViewCell
+        
+        result?.statusText = string
+        
+        return result ?? UITableViewCell()
+    }
 }
 
 extension NearbyViewController: UITableViewDelegate {

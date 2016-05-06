@@ -81,16 +81,16 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="izl-wB-ujp">
                                                     <rect key="frame" x="16" y="0.0" width="568" height="44"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQ6-Jm-QyN">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" misplaced="YES" text="Nearby Operation Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQ6-Jm-QyN">
                                                             <rect key="frame" x="0.0" y="12" width="42" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Pty-7i-7O2"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7B-Fu-dJW" userLabel="Switch Container View">
+                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7B-Fu-dJW" userLabel="Switch Container View">
                                                             <rect key="frame" x="50" y="0.0" width="74" height="44"/>
                                                             <subviews>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yXN-gE-Zkv" userLabel="Switch">
@@ -117,7 +117,7 @@
                                                                 <constraint firstAttribute="width" secondItem="yXN-gE-Zkv" secondAttribute="width" multiplier="1.5" id="zo7-2j-QK2"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" horizontalHuggingPriority="50" translatesAutoresizingMaskIntoConstraints="NO" id="2Vm-Yw-Z1G">
+                                                        <view contentMode="scaleToFill" horizontalHuggingPriority="50" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Vm-Yw-Z1G">
                                                             <rect key="frame" x="132" y="22" width="436" height="1"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="g6N-pQ-qAc"/>
@@ -164,7 +164,7 @@
                                                                         <constraint firstAttribute="height" constant="12" id="gNf-OP-Zwy"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="999" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOn-Fj-dly">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="999" misplaced="YES" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOn-Fj-dly">
                                                                     <rect key="frame" x="0.0" y="116" width="536" height="23"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="23" id="znF-Z0-ZU4"/>
@@ -173,7 +173,7 @@
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THH-GB-xhp">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" text="User email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THH-GB-xhp">
                                                                     <rect key="frame" x="0.0" y="143" width="536" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="xXV-ey-eoV"/>
@@ -212,14 +212,14 @@
                                             <outlet property="userNameLabel" destination="JOn-Fj-dly" id="bGy-Bp-waQ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatusRow" rowHeight="48" id="1kp-k6-gV4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatusTableViewCell" rowHeight="48" id="1kp-k6-gV4" customClass="StatusTableViewCell" customModule="Calling_Card" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="294" width="600" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1kp-k6-gV4" id="GPQ-TT-2xW">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dji-FF-mXK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dji-FF-mXK" userLabel="Status Label">
                                                     <rect key="frame" x="16" y="0.0" width="568" height="48"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="QHC-CN-94M"/>
@@ -234,6 +234,34 @@
                                                 <constraint firstItem="Dji-FF-mXK" firstAttribute="leading" secondItem="GPQ-TT-2xW" secondAttribute="leading" constant="16" id="aKl-hp-r6h"/>
                                                 <constraint firstAttribute="bottom" secondItem="Dji-FF-mXK" secondAttribute="bottom" id="h8Z-T5-Cp2"/>
                                                 <constraint firstAttribute="trailing" secondItem="Dji-FF-mXK" secondAttribute="trailing" constant="16" id="lYM-rO-fl1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="Dji-FF-mXK" id="1ey-XG-Lja"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SavedCardsHeaderTableViewCell" rowHeight="48" id="wiy-lw-UYt">
+                                        <rect key="frame" x="0.0" y="342" width="600" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wiy-lw-UYt" id="Fht-TS-t12">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved Cards" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGh-On-PxR" userLabel="Status Label">
+                                                    <rect key="frame" x="16" y="0.0" width="568" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="LaL-Nf-pkR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="kGh-On-PxR" secondAttribute="bottom" id="7M5-JM-Xok"/>
+                                                <constraint firstItem="kGh-On-PxR" firstAttribute="leading" secondItem="Fht-TS-t12" secondAttribute="leading" constant="16" id="BJJ-PU-Qzq"/>
+                                                <constraint firstAttribute="trailing" secondItem="kGh-On-PxR" secondAttribute="trailing" constant="16" id="Cfg-O5-9Ti"/>
+                                                <constraint firstItem="kGh-On-PxR" firstAttribute="top" secondItem="Fht-TS-t12" secondAttribute="top" id="RaY-H0-PGQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
