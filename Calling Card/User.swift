@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class User: NSObject {
+final class User: Equatable {
     
     private static let KEY_ID = "id"
     private static let KEY_NAME = "name"
@@ -79,4 +79,8 @@ final class User: NSObject {
         return try? NSJSONSerialization.dataWithJSONObject(dictRepresentation, options: [])
     }
 
+}
+
+func ==(lhs: User, rhs: User) -> Bool {
+    return lhs.id == rhs.id
 }

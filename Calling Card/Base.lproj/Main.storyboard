@@ -67,12 +67,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="948-ZK-3mx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="948-ZK-3mx">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="d0y-L1-INj" userLabel="Header Padding">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="16"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="CAX-Ee-fwq" userLabel="Footer Padding">
+                                    <rect key="frame" x="0.0" y="406" width="600" height="16"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OperationControlTableViewCell" id="7hE-aE-mX7" customClass="OperationControlTableViewCell" customModule="Calling_Card" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="44" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7hE-aE-mX7" id="oya-Mb-tWj">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -139,7 +149,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserTableViewCell" rowHeight="222" id="CSh-KX-vL4" userLabel="UserTableViewCell" customClass="UserTableViewCell" customModule="Calling_Card" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="600" height="222"/>
+                                        <rect key="frame" x="0.0" y="88" width="600" height="222"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CSh-KX-vL4" id="Wa0-sq-QA2">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="222"/>
@@ -213,7 +223,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatusTableViewCell" rowHeight="48" id="1kp-k6-gV4" customClass="StatusTableViewCell" customModule="Calling_Card" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="294" width="600" height="48"/>
+                                        <rect key="frame" x="0.0" y="310" width="600" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1kp-k6-gV4" id="GPQ-TT-2xW">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>
@@ -241,7 +251,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SavedCardsHeaderTableViewCell" rowHeight="48" id="wiy-lw-UYt">
-                                        <rect key="frame" x="0.0" y="342" width="600" height="48"/>
+                                        <rect key="frame" x="0.0" y="358" width="600" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wiy-lw-UYt" id="Fht-TS-t12">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="48"/>

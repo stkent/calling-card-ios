@@ -18,13 +18,23 @@ final class NearbyViewController: UIViewController {
     
     private var nearbyUsers: [User] = [] {
         didSet {
+            print("Current nearby users: \(nearbyUsers.map({ $0.id }))")
+            recomputeNearbyUsersToDisplay()
             tableView.reloadData()
         }
     }
     
     private var savedUsers: [User] = [] {
         didSet {
+            print("Current saved users: \(savedUsers.map({ $0.id }))")
+            recomputeNearbyUsersToDisplay()
             tableView.reloadData()
+        }
+    }
+    
+    private var nearbyUsersToDisplay: [User] = [] {
+        didSet {
+            print("Nearby users to display: \(nearbyUsersToDisplay.map({ $0.id }))")
         }
     }
     
@@ -86,7 +96,7 @@ final class NearbyViewController: UIViewController {
 
     @IBAction func signOutButtonTapped(sender: UIBarButtonItem) {
         cancelAllNearbyActivity()
-        clearUser()
+        clearGoogleUser()
     }
 
     override func viewDidLoad() {
@@ -94,6 +104,8 @@ final class NearbyViewController: UIViewController {
         GNSPermission.setGranted(false)
         
         configureTableView()
+        
+        savedUsers = savedUsersManager.getSavedUsers()
         
         gnsPermissionProxy = GNSPermission { [weak self] granted in
             if !granted {
@@ -120,18 +132,25 @@ final class NearbyViewController: UIViewController {
     private func attemptToSubscribe() {
         currentSubscriptionReference = messageManager.subscriptionWithMessageFoundHandler(
             { [weak self] foundMessage in
-                if let _self = self,
-                    nearbyUser = User(nsData: foundMessage.content)
-                    where !_self.nearbyUsers.map({ user in return user.id }).contains(nearbyUser.id) {
-                    
+                print("Message found")
+                
+                if let _self = self, nearbyUser = User(nsData: foundMessage.content) {
+                    print("\(nearbyUser.id) found")
+
+                    if !_self.nearbyUsers.contains(nearbyUser) {
+                        print("Adding \(nearbyUser.id) to nearby users list")
+
                         _self.nearbyUsers = [nearbyUser] + _self.nearbyUsers
+                    }
                 }
             },
             messageLostHandler: { [weak self] lostMessage in
-                if let _self = self,
-                    lostUser = User(nsData: lostMessage.content) {
-                    
-                        _self.nearbyUsers = _self.nearbyUsers.filter { user in return user.id != lostUser.id }
+                print("Message lost")
+                
+                if let _self = self, lostUser = User(nsData: lostMessage.content) {
+                    print("\(lostUser.id) lost")
+                    print("Removing \(lostUser.id) from nearby users list")
+                    _self.nearbyUsers = _self.nearbyUsers.filter { $0 != lostUser }
                 }
             })
     }
@@ -141,6 +160,7 @@ final class NearbyViewController: UIViewController {
     }
     
     private func stopSubscribing() {
+        nearbyUsers = []
         currentSubscriptionReference = nil
     }
     
@@ -149,9 +169,13 @@ final class NearbyViewController: UIViewController {
         stopSubscribing()
     }
     
-    private func clearUser() {
+    private func clearGoogleUser() {
         GIDSignIn.sharedInstance().signOut()
         GIDSignIn.sharedInstance().disconnect()
+    }
+    
+    private func recomputeNearbyUsersToDisplay() {
+        nearbyUsersToDisplay = nearbyUsers.filter { !savedUsers.contains($0) }
     }
     
 }
@@ -175,15 +199,27 @@ extension NearbyViewController: UITableViewDataSource {
      */
     private static let STATIC_CELL_COUNT = 4
     
+     // Either display all eligible nearby users, or a single status row
+    var numberOfCellsInNearbyUsersSection: Int {
+        return max(nearbyUsersToDisplay.count, 1)
+    }
+    
+    // Either display all saved users, or a single status row
+    var numberOfCellsInSavedUsersSection: Int {
+        return max(savedUsers.count, 1)
+    }
+    
+    var savedCardsHeaderIndex: Int {
+        return (NearbyViewController.STATIC_CELL_COUNT - 1) + numberOfCellsInNearbyUsersSection
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return NearbyViewController.STATIC_CELL_COUNT
-            + max(nearbyUsers.count, 1) // Either display all nearby users, or a single status row
-            + max(savedUsers.count, 1) // Either display all saved users, or a single status row
+            + numberOfCellsInNearbyUsersSection
+            + numberOfCellsInSavedUsersSection
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let savedCardsHeaderIndex = (NearbyViewController.STATIC_CELL_COUNT - 1) + max(nearbyUsers.count, 1)
-        
         switch indexPath.row {
             
         // Publish control
@@ -224,21 +260,21 @@ extension NearbyViewController: UITableViewDataSource {
                 ?? UITableViewCell()
             
         default:
-            if indexPath.row > savedCardsHeaderIndex {
-                // Saved cards section
-                if savedUsers.count > 0 {
-                    return standardTableViewCellForUser(
-                        savedUsers[indexPath.row - NearbyViewController.STATIC_CELL_COUNT - nearbyUsers.count])
-                } else {
-                    return statusTableViewCellWithString("No saved cards found!")
-                }
-            } else if indexPath.row < savedCardsHeaderIndex {
+            if indexPath.row < savedCardsHeaderIndex {
                 // Nearby users section
-                if nearbyUsers.count > 0 {
-                    return standardTableViewCellForUser(
-                        nearbyUsers[indexPath.row - (NearbyViewController.STATIC_CELL_COUNT - 1)])
+                if nearbyUsersToDisplay.isEmpty {
+                    return statusTableViewCellWithString("No new nearby users detected!")
                 } else {
-                    return statusTableViewCellWithString("No nearby users detected!")
+                    return standardTableViewCellForUser(
+                        nearbyUsersToDisplay[indexPath.row - (NearbyViewController.STATIC_CELL_COUNT - 1)])
+                }
+            } else if indexPath.row > savedCardsHeaderIndex {
+                // Saved cards section
+                if savedUsers.isEmpty {
+                    return statusTableViewCellWithString("No saved cards found!")
+                } else {
+                    return standardTableViewCellForUser(
+                        savedUsers[indexPath.row - NearbyViewController.STATIC_CELL_COUNT - numberOfCellsInNearbyUsersSection])
                 }
             }
             
@@ -251,6 +287,7 @@ extension NearbyViewController: UITableViewDataSource {
             UserTableViewCell.reuseIdentifier) as? UserTableViewCell
         
         result?.bindUser(user)
+        result?.setBorderColor(.Grey)
         
         return result ?? UITableViewCell()
     }
@@ -267,20 +304,61 @@ extension NearbyViewController: UITableViewDataSource {
 
 extension NearbyViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let row = indexPath.row
-        
-        if (row >= NearbyViewController.STATIC_CELL_COUNT) {
-            let tappedUser = nearbyUsers[row - NearbyViewController.STATIC_CELL_COUNT]
-
-            let savePrompt = UIAlertController()
-            savePrompt.message = "Save \(tappedUser.name)'s info?"
-            savePrompt.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-            savePrompt.addAction(UIAlertAction(title: "Save", style: .Default) { _ in
-                self.savedUsersManager.saveUser(tappedUser)
-                self.tableView.reloadData()
-            })
+    func rowRepresentsNearbyUser(indexPath: NSIndexPath) -> Bool {
+        return !nearbyUsersToDisplay.isEmpty
+            && indexPath.row >= (NearbyViewController.STATIC_CELL_COUNT - 1)
+            && indexPath.row < savedCardsHeaderIndex
+    }
+    
+    func rowRepresentsSavedUser(indexPath: NSIndexPath) -> Bool {
+        return !savedUsers.isEmpty
+            && indexPath.row > savedCardsHeaderIndex
+    }
+    
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        if rowRepresentsNearbyUser(indexPath) || rowRepresentsSavedUser(indexPath) {
+            return indexPath
         }
+        
+        return nil
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if rowRepresentsNearbyUser(indexPath) {
+            let tappedUser = nearbyUsersToDisplay[indexPath.row - (NearbyViewController.STATIC_CELL_COUNT - 1)]
+            showSaveUserAlert(tappedUser)
+        } else if rowRepresentsSavedUser(indexPath) {
+            let tappedUser = savedUsers[indexPath.row - NearbyViewController.STATIC_CELL_COUNT - numberOfCellsInNearbyUsersSection]
+            showDeleteUserAlert(tappedUser)
+        }
+    }
+    
+    private func showSaveUserAlert(user: User) {
+        let savePrompt = getDefaultAlertController()
+        savePrompt.message = "Save \(user.name)'s info?"
+        savePrompt.addAction(UIAlertAction(title: "Save", style: .Default) { _ in
+            self.savedUsersManager.saveUser(user)
+            self.savedUsers = [user] + self.savedUsers
+        })
+        
+        self.presentViewController(savePrompt, animated: true, completion: nil)
+    }
+    
+    private func showDeleteUserAlert(user: User) {
+        let deletePrompt = getDefaultAlertController()
+        deletePrompt.message = "Delete \(user.name)'s info?"
+        deletePrompt.addAction(UIAlertAction(title: "Delete", style: .Destructive) { _ in
+            self.savedUsersManager.deleteUser(user)
+            self.savedUsers = self.savedUsers.filter { $0 != user }
+        })
+        
+        self.presentViewController(deletePrompt, animated: true, completion: nil)
+    }
+    
+    private func getDefaultAlertController() -> UIAlertController {
+        let result = UIAlertController()
+        result.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        return result
     }
     
 }
