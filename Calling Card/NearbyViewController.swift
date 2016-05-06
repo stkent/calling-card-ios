@@ -180,10 +180,10 @@ extension NearbyViewController: UITableViewDataSource {
             return result ?? UITableViewCell()
         case 1:
             let result = tableView.dequeueReusableCellWithIdentifier(
-                PublishedUserTableViewCell.subclassReuseIdentifier) as? PublishedUserTableViewCell
+                UserTableViewCell.reuseIdentifier) as? UserTableViewCell
             
             result?.bindUser(currentUser!)
-            result?.publishing = activelyPublishing
+            result?.setBorderColor(activelyPublishing ? .Green : .Red)
             
             return result ?? UITableViewCell()
         case 2:

@@ -14,7 +14,6 @@
 		179D48F11CD4285500262BE5 /* OperationControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D48F01CD4285500262BE5 /* OperationControlTableViewCell.swift */; };
 		179D48F31CD430E300262BE5 /* NearbyAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D48F21CD430E300262BE5 /* NearbyAPIOperation.swift */; };
 		179D48F51CD51F4900262BE5 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D48F41CD51F4900262BE5 /* UserTableViewCell.swift */; };
-		179D48F71CD53FED00262BE5 /* PublishedUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D48F61CD53FED00262BE5 /* PublishedUserTableViewCell.swift */; };
 		17A105971CCFC24E0041E514 /* CurrentUserRecipient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A105961CCFC24E0041E514 /* CurrentUserRecipient.swift */; };
 		17A105991CCFFC350041E514 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A105981CCFFC350041E514 /* SignInViewController.swift */; };
 		3710F6CACA89E859FEA9FB7B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CAEA64975357B66B60D879 /* libPods.a */; };
@@ -33,7 +32,6 @@
 		179D48F01CD4285500262BE5 /* OperationControlTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationControlTableViewCell.swift; sourceTree = "<group>"; };
 		179D48F21CD430E300262BE5 /* NearbyAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyAPIOperation.swift; sourceTree = "<group>"; };
 		179D48F41CD51F4900262BE5 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		179D48F61CD53FED00262BE5 /* PublishedUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishedUserTableViewCell.swift; sourceTree = "<group>"; };
 		17A105961CCFC24E0041E514 /* CurrentUserRecipient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserRecipient.swift; sourceTree = "<group>"; };
 		17A105981CCFFC350041E514 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		AC22C5E21CC86A34000DFF07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				17A105961CCFC24E0041E514 /* CurrentUserRecipient.swift */,
 				17A105981CCFFC350041E514 /* SignInViewController.swift */,
 				179D48F41CD51F4900262BE5 /* UserTableViewCell.swift */,
-				179D48F61CD53FED00262BE5 /* PublishedUserTableViewCell.swift */,
 				1742D3991CDA9C8D0022B036 /* SavedUsersManager.swift */,
 			);
 			path = "Calling Card";
@@ -245,7 +242,6 @@
 			files = (
 				176F545B1CD2B24000BEE2DE /* SignInNavigationController.swift in Sources */,
 				179D48F31CD430E300262BE5 /* NearbyAPIOperation.swift in Sources */,
-				179D48F71CD53FED00262BE5 /* PublishedUserTableViewCell.swift in Sources */,
 				179549E41CCFBF8800114389 /* User.swift in Sources */,
 				AC46804C1CC477F0000CEE2E /* AppDelegate.swift in Sources */,
 				17A105971CCFC24E0041E514 /* CurrentUserRecipient.swift in Sources */,
@@ -370,6 +366,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Stuart Kent (Q9FHGTP6FK)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Calling Card/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -385,6 +382,7 @@
 			baseConfigurationReference = B2CFBB6B1274DB1C9F074952 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Calling Card/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
