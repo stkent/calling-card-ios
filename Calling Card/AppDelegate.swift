@@ -18,14 +18,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         
         configureStatusAndNavigationBars(application)
-        
-        // Initialize sign-in
-        var configureError: NSError?
-        GGLContext.sharedInstance().configureWithError(&configureError)
-        assert(configureError == nil, "Error configuring Google services: \(configureError)")
-        
-        // Initialize Nearby Messages manager
-        GNSMessageManager.setDebugLoggingEnabled(true)
+        configureGoogleSignIn()
+        configureNearbyMessagesManager()
         
         return true
     }
@@ -54,6 +48,16 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().translucent = false
         UINavigationBar.appearance().translucent = false
         UINavigationBar.appearance().barTintColor = UIColor.deepRed()
+    }
+    
+    private func configureGoogleSignIn() {
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+    }
+    
+    private func configureNearbyMessagesManager() {
+        GNSMessageManager.setDebugLoggingEnabled(true)
     }
 
 }
