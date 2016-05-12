@@ -17,6 +17,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         
+        configureStatusAndNavigationBars(application)
+        
         // Initialize sign-in
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
@@ -38,6 +40,20 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
                 url,
                 sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as? String,
                 annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
+    }
+    
+    private func configureStatusAndNavigationBars(application: UIApplication) {
+        // White status bar icons
+        application.statusBarStyle = .LightContent
+        
+        // White navigation bar text
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        
+        // Colored status and navigation bar backgrounds
+        UINavigationBar.appearance().translucent = false
+        UINavigationBar.appearance().translucent = false
+        UINavigationBar.appearance().barTintColor = UIColor.deepRed()
     }
 
 }

@@ -18,6 +18,8 @@
 	<string>1.0.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -25,7 +27,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.338760961599-dtsdeis2jff431lh8j5u9m9bga59v5o7</string>
+				<string>com.googleusercontent.apps.338760961599-8uqedmd5fi7rdi5aa6vsv88p10peun1k</string>
 			</array>
 		</dict>
 		<dict>

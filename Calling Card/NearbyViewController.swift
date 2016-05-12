@@ -239,7 +239,7 @@ extension NearbyViewController: UITableViewDataSource {
                 UserTableViewCell.reuseIdentifier) as? UserTableViewCell
             
             result?.bindUser(currentUser!)
-            result?.setBorderColor(activelyPublishing ? .Green : .Red)
+            result?.setBorderColor(activelyPublishing ? .Blue : .Red)
             
             return result ?? UITableViewCell()
         

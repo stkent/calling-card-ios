@@ -10,17 +10,17 @@ import UIKit
 
 enum BorderColor {
     case Grey
-    case Green
+    case Blue
     case Red
     
     var asUIColor: UIColor {
         switch self {
         case .Grey:
             return UIColor.lightGrayColor()
-        case .Green:
-            return UIColor(red: 113.0/255.0, green: 217.0/255.0, blue: 114.0/255.0, alpha: 1)
+        case .Blue:
+            return UIColor.intenseBlue()
         case.Red:
-            return UIColor(red: 1, green: 127.0/255.0, blue: 128.0/255.0, alpha: 1)
+            return UIColor.deepRed()
         }
     }
 }
@@ -52,14 +52,10 @@ class UserTableViewCell: UITableViewCell {
         }
     }
     
-    let publishingBorderColor = UIColor(red: 113.0/255.0, green: 217.0/255.0, blue: 114.0/255.0, alpha: 1)
-    
-    let notPublishingBorderColor = UIColor(red: 1, green: 127.0/255.0, blue: 128.0/255.0, alpha: 1)
-    
     func setBorderColor(borderColor: BorderColor) {
         let borderUIColor = borderColor.asUIColor
         
-        let backgroundColor = borderUIColor.colorWithAlphaComponent(0.4)
+        let backgroundColor = borderUIColor.colorWithAlphaComponent(0.3)
         
         cellBackgroundView?.layer.borderColor = borderUIColor.CGColor
         cellBackgroundView.backgroundColor = backgroundColor
