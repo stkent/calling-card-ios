@@ -101,8 +101,6 @@ final class NearbyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        GNSPermission.setGranted(false)
-        
         configureTableView()
         
         savedUsers = savedUsersManager.getSavedUsers()
