@@ -102,7 +102,10 @@ final class NearbyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         savedUsers = savedUsersManager.getSavedUsers()
         
         gnsPermissionProxy = GNSPermission { [weak self] granted in
@@ -112,6 +115,22 @@ final class NearbyViewController: UIViewController {
             
             self?.tableView.reloadData()
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(tearDownNearby),
+            name: UIApplicationDidEnterBackgroundNotification,
+            object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        tearDownNearby()
+        super.viewWillDisappear(animated)
+    }
+    
+    func tearDownNearby() {
+        cancelAllNearbyActivity()
+        gnsPermissionProxy = nil
     }
     
     private func configureTableView() {
