@@ -49,6 +49,8 @@ class UserTableViewCell: UITableViewCell {
         
         if let photoUrlString = user.photoUrlString {
             photoImageView.sd_setImageWithURL(NSURL(string: photoUrlString))
+        } else {
+            photoImageView.image = nil
         }
     }
     
