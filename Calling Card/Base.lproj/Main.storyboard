@@ -159,23 +159,23 @@
                                                 <view contentMode="scaleToFill" verticalHuggingPriority="500" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7yr-c1-IhR" userLabel="Signed In User Row Background">
                                                     <rect key="frame" x="16" y="16" width="568" height="186"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="IUB-i1-bir" userLabel="User Row Content View">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="IUB-i1-bir" userLabel="User Row Content View">
                                                             <rect key="frame" x="16" y="16" width="536" height="163"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8vC-mL-YcH">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="8vC-mL-YcH">
                                                                     <rect key="frame" x="0.0" y="0.0" width="97" height="96"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="96" id="9L9-1d-u5J"/>
                                                                         <constraint firstAttribute="width" secondItem="8vC-mL-YcH" secondAttribute="height" multiplier="1:1" constant="1" id="LAj-zo-Y0m"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5nZ-LQ-3QZ" userLabel="Spacer">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nZ-LQ-3QZ" userLabel="Spacer">
                                                                     <rect key="frame" x="0.0" y="100" width="536" height="12"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="12" id="gNf-OP-Zwy"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="999" misplaced="YES" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOn-Fj-dly">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="999" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOn-Fj-dly">
                                                                     <rect key="frame" x="0.0" y="116" width="536" height="23"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="23" id="znF-Z0-ZU4"/>
@@ -184,7 +184,7 @@
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" text="User email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THH-GB-xhp">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="User email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THH-GB-xhp">
                                                                     <rect key="frame" x="0.0" y="143" width="536" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="xXV-ey-eoV"/>
@@ -317,4 +317,7 @@
             <point key="canvasLocation" x="1175" y="343"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Placeholder" width="96" height="96"/>
+    </resources>
 </document>

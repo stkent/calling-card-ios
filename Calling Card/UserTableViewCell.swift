@@ -50,7 +50,7 @@ class UserTableViewCell: UITableViewCell {
         if let photoUrlString = user.photoUrlString {
             photoImageView.sd_setImageWithURL(NSURL(string: photoUrlString))
         } else {
-            photoImageView.image = nil
+            photoImageView.image = UIImage(named: "Placeholder.png")
         }
     }
     
