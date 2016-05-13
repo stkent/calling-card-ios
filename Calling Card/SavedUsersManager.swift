@@ -15,9 +15,6 @@ struct SavedUsersManager {
     private let defaults: NSUserDefaults
 
     init(defaults: NSUserDefaults = .standardUserDefaults()) {
-        
-        let appDomain = NSBundle.mainBundle().bundleIdentifier!
-        NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain)
         self.defaults = defaults
     }
 
