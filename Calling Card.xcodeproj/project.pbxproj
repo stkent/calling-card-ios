@@ -374,7 +374,8 @@
 			baseConfigurationReference = B25A36514F6D88BFA1BD016F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stuart Kent (Q9FHGTP6FK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Stuart Kent (Q9FHGTP6FK)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Calling Card/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -391,7 +392,8 @@
 			baseConfigurationReference = B2CFBB6B1274DB1C9F074952 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Stuart Kent (34DELE8FMK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Stuart Kent (34DELE8FMK)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Calling Card/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

@@ -92,7 +92,7 @@
                                                     <rect key="frame" x="16" y="0.0" width="568" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" misplaced="YES" text="Nearby Operation Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQ6-Jm-QyN">
-                                                            <rect key="frame" x="0.0" y="12" width="42" height="21"/>
+                                                            <rect key="frame" x="0.0" y="12" width="207" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Pty-7i-7O2"/>
                                                             </constraints>
@@ -101,7 +101,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7B-Fu-dJW" userLabel="Switch Container View">
-                                                            <rect key="frame" x="50" y="0.0" width="74" height="44"/>
+                                                            <rect key="frame" x="215" y="0.0" width="74" height="44"/>
                                                             <subviews>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yXN-gE-Zkv" userLabel="Switch">
                                                                     <rect key="frame" x="12" y="7" width="51" height="31"/>
@@ -129,7 +129,7 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" horizontalHuggingPriority="50" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Vm-Yw-Z1G">
-                                                            <rect key="frame" x="132" y="22" width="436" height="1"/>
+                                                            <rect key="frame" x="297" y="22" width="271" height="1"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="g6N-pQ-qAc"/>
                                                             </constraints>
@@ -156,8 +156,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="222"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" verticalHuggingPriority="500" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7yr-c1-IhR" userLabel="Signed In User Row Background">
-                                                    <rect key="frame" x="16" y="16" width="568" height="186"/>
+                                                <view contentMode="scaleToFill" verticalHuggingPriority="500" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="7yr-c1-IhR" userLabel="Signed In User Row Background">
+                                                    <rect key="frame" x="16" y="16" width="568" height="195"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="IUB-i1-bir" userLabel="User Row Content View">
                                                             <rect key="frame" x="16" y="16" width="536" height="163"/>
@@ -302,7 +302,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Calling Card" id="wFU-i7-Edg">
-                        <barButtonItem key="rightBarButtonItem" title="Sign Out" style="plain" id="UKb-ut-B5n">
+                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="UKb-ut-B5n">
                             <connections>
                                 <action selector="signOutButtonTapped:" destination="gl3-FZ-4WK" id="7HC-zi-t1O"/>
                             </connections>
