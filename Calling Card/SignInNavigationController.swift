@@ -12,27 +12,42 @@ class SignInNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         
         if GIDSignIn.sharedInstance().hasAuthInKeychain() {
             GIDSignIn.sharedInstance().signInSilently()
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(displayNearbyViewController),
+            name: "USER_SIGNED_IN",
+            object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(displaySignInViewController),
+            name: "USER_SIGNED_OUT",
+            object: nil)
     }
     
-    private func displayNearbyViewController(currentUser: User) {
+    func displayNearbyViewController(notification: NSNotification) {
         if let topViewController = viewControllers.last where topViewController is NearbyViewController {
+            return
+        }
+        
+        guard let signedInUser = notification.userInfo?["User"] as? User else {
             return
         }
         
         if let nearbyViewController = storyboard?.instantiateViewControllerWithIdentifier(NearbyViewController.storyboardId),
             currentUserRecipient = nearbyViewController as? CurrentUserRecipient {
-                currentUserRecipient.setCurrentUser(currentUser)
+                currentUserRecipient.setCurrentUser(signedInUser)
                 setViewControllers([nearbyViewController], animated: true)
         }
     }
     
-    private func displaySignInViewController() {
+    func displaySignInViewController() {
         if let topViewController = viewControllers.last where topViewController is SignInViewController {
             return
         }
@@ -40,36 +55,6 @@ class SignInNavigationController: UINavigationController {
         if let signInViewController = storyboard?.instantiateViewControllerWithIdentifier(SignInViewController.storyboardId) {
             setViewControllers([signInViewController], animated: true)
         }
-    }
-    
-}
-
-extension SignInNavigationController: GIDSignInDelegate {
-    
-    func signIn(
-        signIn: GIDSignIn!,
-        didSignInForUser gidGoogleUser: GIDGoogleUser!,
-        withError error: NSError!) {
-        
-            if (error == nil) {
-                print("User signed in.")
-                displayNearbyViewController(User(gidGoogleUser: gidGoogleUser))
-            } else {
-                print(error.localizedDescription)
-            }
-    }
-    
-    func signIn(
-        signIn: GIDSignIn!,
-        didDisconnectWithUser user:GIDGoogleUser!,
-        withError error: NSError!) {
-        
-            if (error == nil) {
-                print("User signed out.")
-                displaySignInViewController()
-            } else {
-                print(error.localizedDescription)
-            }
     }
     
 }

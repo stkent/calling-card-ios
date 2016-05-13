@@ -54,10 +54,45 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
+        GIDSignIn.sharedInstance().delegate = self
     }
     
     private func configureNearbyMessagesManager() {
         GNSMessageManager.setDebugLoggingEnabled(true)
     }
 
+}
+
+extension AppDelegate: GIDSignInDelegate {
+    
+    func signIn(
+        signIn: GIDSignIn!,
+        didSignInForUser gidGoogleUser: GIDGoogleUser!,
+        withError error: NSError!) {
+        
+            if (error == nil) {
+                NSNotificationCenter.defaultCenter().postNotificationName(
+                    "USER_SIGNED_IN",
+                    object: nil,
+                    userInfo: ["User": User(gidGoogleUser: gidGoogleUser)])
+            } else {
+                print("\(error.localizedDescription)")
+                
+                NSNotificationCenter.defaultCenter().postNotificationName(
+                    "USER_SIGNED_OUT",
+                    object: nil)
+            }
+    }
+    
+    func signIn(
+        signIn: GIDSignIn!,
+        didDisconnectWithUser user:GIDGoogleUser!,
+        withError error: NSError!) {
+        
+            NSNotificationCenter.defaultCenter().postNotificationName(
+                "USER_SIGNED_OUT",
+                object: nil)
+    }
+    
 }

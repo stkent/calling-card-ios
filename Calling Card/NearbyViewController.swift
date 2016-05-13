@@ -53,7 +53,7 @@ final class NearbyViewController: UIViewController {
     }
     
     private lazy var messageManager: GNSMessageManager = {
-        GNSMessageManager(APIKey: "AIzaSyClHL5KdqrIeyHjfWxRtb8C0nYmwffLGtI") { params in
+        GNSMessageManager(APIKey: "AIzaSyCSPGFZjt4ysDxbNUQbqd5piz0hnD4fJKY") { params in
             params.microphonePermissionErrorHandler = { hasError in
                 if hasError {
                     // todo: do we get callback each time this status changes; or only initially?
