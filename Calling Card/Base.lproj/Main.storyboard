@@ -105,6 +105,7 @@
                                                             <subviews>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yXN-gE-Zkv" userLabel="Switch">
                                                                     <rect key="frame" x="12" y="7" width="51" height="31"/>
+                                                                    <color key="onTintColor" red="0.30196078431372547" green="0.42352941176470588" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </switch>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBv-ie-EWq">
                                                                     <rect key="frame" x="12" y="7" width="49" height="31"/>
