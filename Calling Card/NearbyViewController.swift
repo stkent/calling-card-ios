@@ -358,7 +358,7 @@ extension NearbyViewController: UITableViewDelegate {
             self.savedUsers = [user] + self.savedUsers
         })
         
-        self.presentViewController(savePrompt, animated: true, completion: nil)
+        presentViewController(savePrompt, animated: true, completion: nil)
     }
     
     private func showDeleteUserAlert(user: User) {
@@ -369,11 +369,11 @@ extension NearbyViewController: UITableViewDelegate {
             self.savedUsers = self.savedUsers.filter { $0 != user }
         })
         
-        self.presentViewController(deletePrompt, animated: true, completion: nil)
+        presentViewController(deletePrompt, animated: true, completion: nil)
     }
     
     private func getDefaultAlertController() -> UIAlertController {
-        let result = UIAlertController()
+        let result = UIAlertController(title: nil, message: nil, preferredStyle: .Alert)
         result.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         return result
     }
