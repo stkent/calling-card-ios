@@ -75,13 +75,11 @@ final class NearbyViewController: UIViewController {
     }()
     
     private var messageToPublish: GNSMessage? {
-        if let currentUser = currentUser,
-            currentUserJSON = currentUser.toNSData() {
-            
-                return GNSMessage(content: currentUserJSON)
+        guard let currentUserJSON = currentUser?.toNSData() else {
+            return nil
         }
         
-        return nil
+        return GNSMessage(content: currentUserJSON)
     }
     
     private var activelyPublishing: Bool {
